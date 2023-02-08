@@ -1,7 +1,7 @@
 import { Formik, Form as FormikForm, Field, ErrorMessage } from "formik";
 import { SchemaForm } from "../lib/models";
 import { useCreate } from "../lib/hooks";
-import Spinner from "../components/shared";
+import Spinner from "../components/Shared";
 export default function Home() {
   const { mutate, isLoading, isError, reset } = useCreate();
 
