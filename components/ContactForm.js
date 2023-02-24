@@ -1,4 +1,4 @@
-import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 
 export default function Form() {
   return (
@@ -8,10 +8,16 @@ export default function Form() {
           <h2 className="sr-only">Contact us</h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-3">
-            {/* Contact information */}
-            <div className="relative overflow-hidden bg-secondary py-10 px-6 sm:px-10 xl:p-12"></div>
+            <div className="flex justify-center items-center bg-secondary -py-10 -px-6 sm:-px-10 xl:-p-12">
+              <Image
+                className="rounded-md"
+                src="/auto-datos.png"
+                alt=""
+                width={1200}
+                height={713}
+              />
+            </div>
 
-            {/* Contact form */}
             <div className="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12 bg-main">
               <h2 className="text-xl font-light uppercase tracking-tight text-white sm:text-xl text-center">
                 DÉJANOS TUS DATOS

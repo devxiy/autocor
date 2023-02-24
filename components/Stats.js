@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const stats = [
   { id: 1, name: "Total de autos", value: "5863" },
   { id: 2, name: "Marcas", value: "29" },
@@ -8,8 +10,8 @@ export default function Stats() {
   return (
     <div className="pb-24 sm:pb-32 pt-6 sm:pt-8">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="bg-secondary py-12">
-          <dl className="grid grid-cols-1 gap-y-16 gap-x-8 text-center lg:grid-cols-3">
+        <div className="bg-secondary py-12 overflow-x-hidden">
+          <dl className="grid grid-cols-1 gap-y-16 gap-x-8 text-center lg:grid-cols-4">
             {stats.map((stat) => (
               <div
                 key={stat.id}
@@ -23,6 +25,15 @@ export default function Stats() {
                 </dd>
               </div>
             ))}
+            <div className="-m-20 flex flex-col">
+              <Image
+                className="rounded-md"
+                src="/auto-agencias.png"
+                alt=""
+                width={800}
+                height={424}
+              />
+            </div>
           </dl>
         </div>
       </div>

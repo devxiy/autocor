@@ -1,16 +1,18 @@
+import Image from "next/image";
+
 export default function CTA() {
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-7xl py-6 sm:px-6 sm:py-8 lg:px-8">
         <div className=" bg-main px-6 pt-16 shadow-xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
-          <div className="w-1/2 mt-16 lg:mt-8">
-            {/* <img
-              className="w-[57rem] rounded-md bg-white/5 ring-1 ring-white/10"
-              src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
-              alt="App screenshot"
-              width={1824}
-              height={1080}
-            /> */}
+          <div className="w-1/2 -m-36 flex justify-center items-center">
+            <Image
+              className="rounded-md"
+              src="/auto-compramos.png"
+              alt=""
+              width={1200}
+              height={713}
+            />
           </div>
           <div className=" w-1/2 text-center lg:mx-0 lg:flex-auto lg:py-32">
             <h2 className="text-xl font-light uppercase tracking-tight text-white sm:text-xl">

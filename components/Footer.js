@@ -52,7 +52,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="bg-secondary">
-        <div className="mx-auto max-w-7xl py-8 px-6 md:flex md:items-center md:justify-center lg:px-8">
+        <div className="mx-auto max-w-7xl py-4 px-6 md:flex md:items-center md:justify-center lg:px-8">
           <div className=" md:order-1 md:mt-0">
             <p className="text-center text-xs leading-5 text-gray-100">
               COPYRIGHT © 2023 | autocor.com.ec
