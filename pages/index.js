@@ -16,8 +16,8 @@ export default function Home() {
         <Button title="Buscar mi auto" />
       </div>
 
-      <div className="bg-white flex justify-center flex-col items-center py-10">
-        <div className="py-10 flex-col justify-center items-center">
+      <div className="bg-white flex justify-center flex-col items-center pt-4 pb-10">
+        <div className="pb-10 flex-col justify-center items-center">
           <SectionText
             title="Destacados"
             subtitle="Encuentra el seminuevo de tus sueños"
