@@ -1,4 +1,5 @@
-export default function Spinner() {
+import Image from "next/image";
+export function Spinner() {
   return (
     <svg
       className="animate-spin -ml-1 mr-3 h-5 w-5"
@@ -20,4 +21,12 @@ export default function Spinner() {
       ></path>
     </svg>
   );
+}
+
+export function Logo() {
+  return <Image alt="" src={"/logo-autocor.png"} width={150} height={68} />;
+}
+
+export function LogoFooter() {
+  return <Image alt="" src={"/logo-autocor.png"} width={120} height={54} />;
 }

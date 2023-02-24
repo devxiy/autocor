@@ -1,189 +1,98 @@
-import { Formik, Form as FormikForm, Field, ErrorMessage } from "formik";
-import { SchemaForm } from "../lib/models";
-import { useCreate } from "../lib/hooks";
-import Spinner from "../components/Shared";
+import Layout from "../components/Layout";
+import Brands from "../components/Brands";
+import List from "../components/List";
+import Stats from "../components/Stats";
+import CTA from "../components/CTA";
+import ContactForm from "../components/ContactForm";
+
 export default function Home() {
-  const { mutate, isLoading, isError, reset } = useCreate();
-
   return (
-    <div className="flex flex-col justify-center items-center h-screen">
-      <h1 className="mb-4 text-2xl font-bold">Formulario Autocor - PILOT</h1>
-      <Formik
-        initialValues={{
-          action: "create",
-          appkey: "",
-          pilot_firstname: "",
-          pilot_contact_type_id: "1",
-          pilot_business_type_id: "1",
-          pilot_suborigin_id: "",
-        }}
-        validationSchema={SchemaForm}
-        onSubmit={(values) => {
-          mutate(values, {
-            onSuccess() {
-              reset();
-            },
-            onError() {
-              reset();
-            },
-          });
-        }}
-      >
-        <FormikForm noValidate>
-          <div className="py-2">
-            <label
-              htmlFor="action"
-              className="block text-sm font-bold font-lato text-gray-700"
-            >
-              action:
-            </label>
-            <Field
-              type="text"
-              name="action"
-              id="action"
-              readOnly
-              className="appearance-none font-light block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-main focus:border-main sm:text-sm"
-            />
-            <ErrorMessage name="action">
-              {(msg) => <div className="text-red-800 text-sm py-2">{msg}</div>}
-            </ErrorMessage>
-          </div>
+    <Layout>
+      <div className="bg-gray-50 flex justify-center flex-col items-center py-10">
+        <SectionText
+          title="Especificaciones"
+          subtitle="¿En cuál tipo de auto estás interesado?"
+        />
+        <Button title="Buscar mi auto" />
+      </div>
 
-          <div className="py-2">
-            <label
-              htmlFor="appkey"
-              className="block text-sm font-bold font-lato text-gray-700"
-            >
-              appkey:
-            </label>
-            <Field
-              type="text"
-              name="appkey"
-              id="appkey"
-              className="appearance-none font-light block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-main focus:border-main sm:text-sm"
-            />
-            <ErrorMessage name="appkey">
-              {(msg) => <div className="text-red-800 text-sm py-2">{msg}</div>}
-            </ErrorMessage>
+      <div className="bg-white flex justify-center flex-col items-center py-10">
+        <div className="py-10 flex-col justify-center items-center">
+          <SectionText
+            title="Destacados"
+            subtitle="Encuentra el seminuevo de tus sueños"
+          />
+          <List list={[1, 2, 3]} />
+          <div className="flex justify-center">
+            <Button title="Ver más autos" />
           </div>
-
-          <div className="py-2">
-            <label
-              htmlFor="pilot_firstname"
-              className="block text-sm font-bold font-lato text-gray-700"
-            >
-              pilot_firstname:
-            </label>
-            <Field
-              type="text"
-              name="pilot_firstname"
-              id="pilot_firstname"
-              maxLength="150"
-              className="appearance-none font-light block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-main focus:border-main sm:text-sm"
-            />
-            <ErrorMessage name="pilot_firstname">
-              {(msg) => <div className="text-red-800 text-sm py-2">{msg}</div>}
-            </ErrorMessage>
-          </div>
-
-          <div className="py-2">
-            <label
-              htmlFor="pilot_contact_type_id"
-              className="block text-sm font-bold font-lato text-gray-700"
-            >
-              pilot_contact_type_id:
-            </label>
-            <Field
-              as="select"
-              name="pilot_contact_type_id"
-              id="pilot_contact_type_id"
-              className="appearance-none font-light block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-main focus:border-main sm:text-sm"
-            >
-              <option key="1" value="1">
-                Electrónico
-              </option>
-              <option key="2" value="2">
-                Telefónico
-              </option>
-              <option key="3" value="3">
-                Entrevista
-              </option>
-            </Field>
-            <ErrorMessage name="pilot_contact_type_id">
-              {(msg) => <div className="text-red-800 text-sm py-2">{msg}</div>}
-            </ErrorMessage>
-          </div>
-
-          <div className="py-2">
-            <label
-              htmlFor="pilot_business_type_id"
-              className="block text-sm font-bold font-lato text-gray-700"
-            >
-              pilot_business_type_id:
-            </label>
-            <Field
-              as="select"
-              name="pilot_business_type_id"
-              id="pilot_business_type_id"
-              className="appearance-none font-light block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-main focus:border-main sm:text-sm"
-            >
-              <option key="1" value="1">
-                Convencional / 0km
-              </option>
-              <option key="2" value="2">
-                Usados
-              </option>
-              <option key="3" value="3">
-                Plan de Ahorro
-              </option>
-            </Field>
-            <ErrorMessage name="pilot_business_type_id">
-              {(msg) => <div className="text-red-800 text-sm py-2">{msg}</div>}
-            </ErrorMessage>
-          </div>
-
-          <div className="py-2">
-            <label
-              htmlFor="pilot_suborigin_id"
-              className="block text-sm font-bold font-lato text-gray-700"
-            >
-              pilot_suborigin_id:
-            </label>
-            <Field
-              type="text"
-              name="pilot_suborigin_id"
-              id="pilot_suborigin_id"
-              maxLength="150"
-              className="appearance-none font-light block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-main focus:border-main sm:text-sm"
-            />
-            <ErrorMessage name="pilot_suborigin_id">
-              {(msg) => <div className="text-red-800 text-sm py-2">{msg}</div>}
-            </ErrorMessage>
-          </div>
-
-          <div className="py-2 flex justify-center">
-            <button
-              type="submit"
-              disabled={isLoading}
-              className="inline-block shadow-lg bg-main py-2 px-4 font-bold border border-transparent rounded-md text-sm text-white hover:bg-opacity-80"
-            >
-              {isLoading ? (
-                <span className="flex">
-                  <Spinner /> Procesando
-                </span>
-              ) : (
-                <span className="flex">Guardar</span>
-              )}
-            </button>
-          </div>
-        </FormikForm>
-      </Formik>
-
-      {isError && (
-        <div className="py-4 text-sm font-light text-main">
-          Lo sentimos, la transacción no se realizó correctamente.
         </div>
-      )}
+      </div>
+
+      <CTA />
+
+      <div className="bg-white flex justify-center flex-col items-center py-10">
+        <div className="py-10 flex-col justify-center items-center">
+          <SectionText
+            title="Oportunidad de compra"
+            subtitle="Los más vistos de la semana"
+          />
+          <List list={[1, 2, 3, 4, 5, 6]} />
+          <div className="flex justify-center">
+            <Button title="Ver más autos" />
+          </div>
+        </div>
+      </div>
+
+      <Stats />
+
+      <Brands />
+
+      <ContactForm />
+    </Layout>
+  );
+}
+
+function SectionText({ title, subtitle }) {
+  return (
+    <div className="pt-6 pb-2 px-6 sm:pt-8 sm:pb-4 lg:px-8">
+      <div className="mx-auto max-w-4xl text-center">
+        <h2 className="text-xl font-light uppercase tracking-tight text-main sm:text-xl">
+          {title}
+        </h2>
+        <p className="mt-1 text-3xl uppercase font-bold leading-8 text-gray-600 font-poppins">
+          {subtitle}
+        </p>
+      </div>
     </div>
+  );
+}
+
+function Button({ title }) {
+  return (
+    <button className="py-3 px-6 flex items-center bg-gray-600 text-white font-semibold rounded-lg uppercase hover:bg-main">
+      <p>{title}</p> <IconArrow />
+    </button>
+  );
+}
+
+function IconArrow() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fillRule="evenodd"
+      strokeLinejoin="round"
+      strokeMiterlimit="2"
+      clipRule="evenodd"
+      viewBox="0 0 78 136"
+      className="w-2 ml-2"
+    >
+      <path
+        fill="#fff"
+        fillRule="nonzero"
+        d="M0-15.515l6.932 6.932a1.167 1.167 0 010 1.651L0 0c-.735.735-1.992.214-1.992-.825V-14.69c0-1.04 1.257-1.56 1.992-.825"
+        transform="translate(-9082.92 -19967.5) scale(8.33333) translate(1091.94 2411.96)"
+      ></path>
+    </svg>
   );
 }

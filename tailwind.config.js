@@ -8,10 +8,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        main: "#ff0000",
-        secondary: "#fff",
+        main: "#e43d30",
+        secondary: "#3F3F3F",
+      },
+      fontFamily: {
+        sans: ["var(--font-montserrat)", "sans-serif"],
+        poppins: ["var(--font-poppins)", "sans-serif"],
       },
     },
   },
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/aspect-ratio"),
+  ],
 };
