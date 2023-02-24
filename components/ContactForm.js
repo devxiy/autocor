@@ -99,7 +99,7 @@ export default function Form() {
                   </div>
                 </div>
 
-                <div className="sm:col-span-2 sm:flex sm:justify-center">
+                <div className="sm:col-span-2 flex justify-center">
                   <button className="py-3 px-6 flex items-center bg-gray-600 text-white font-semibold rounded-lg uppercase hover:bg-main">
                     <p>Enviar</p> <IconArrow />
                   </button>

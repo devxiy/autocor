@@ -25,7 +25,7 @@ export default function Stats() {
                 </dd>
               </div>
             ))}
-            <div className="-m-20 flex flex-col">
+            <div className="-m-20 lg:flex flex-col hidden ">
               <Image
                 className="rounded-md"
                 src="/auto-agencias.png"
