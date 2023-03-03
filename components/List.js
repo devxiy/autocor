@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -15,19 +18,20 @@ export default function List({ list }) {
                   className="flex flex-col overflow-hidden rounded-lg shadow-lg"
                 >
                   <div className="flex-shrink-0">
-                    <img
+                    <Image
                       className="h-56 w-full object-cover"
                       src={"/carro3.jpg"}
                       alt=""
+                      width={1200}
+                      height={730}
+                      priority
                     />
                   </div>
                   <div className="flex flex-1 flex-col justify-between bg-white p-6">
                     <div className="flex-1">
-                      <a href="#" className="mt-2 block">
-                        <p className="text-lg font-semibold text-gray-900">
-                          NISSAN X-TRAIL SENSE
-                        </p>
-                      </a>
+                      <p className="text-lg font-semibold text-gray-900">
+                        NISSAN X-TRAIL SENSE
+                      </p>
                     </div>
 
                     <div className="flex justify-between py-2 items-center mb-2">
@@ -58,8 +62,13 @@ export default function List({ list }) {
                     </div>
 
                     <div className="flex justify-between pt-4 gap-2">
-                      <div className="w-1/2">
-                        <Button title="Ver detalles" variant="secondary" />
+                      <div className="w-1/2 flex items-center">
+                        <Link
+                          href="/vehiculos/1"
+                          className="bg-gray-600 hover:bg-main py-2 px-4 text-sm text-white font-semibold rounded-lg uppercase w-full"
+                        >
+                          Ver detalles
+                        </Link>
                       </div>
                       <div className="w-1/2">
                         <Button title="Comprar" variant="main" />

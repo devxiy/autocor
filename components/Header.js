@@ -5,15 +5,15 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 const navigation = [
-  { name: "Inicio", href: "#" },
-  { name: "Quiénes somos", href: "#" },
-  { name: "Vehículos", href: "#" },
-  { name: "Compramos tu auto", href: "#" },
-  { name: "Planes de financiamiento", href: "#" },
-  { name: "Contáctanos", href: "#" },
+  { name: "Inicio", href: "/", slug: "home" },
+  { name: "Quiénes somos", href: "#", slug: "about" },
+  { name: "Vehículos", href: "/vehiculos", slug: "vehicles" },
+  { name: "Compramos tu auto", href: "#", slug: "buy" },
+  { name: "Planes de financiamiento", href: "#", slug: "financing" },
+  { name: "Contáctanos", href: "#", slug: "contact" },
 ];
 
-export default function Example() {
+export default function Header({ selected }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -22,10 +22,10 @@ export default function Example() {
         className="mx-auto flex max-w-7xl items-center justify-between py-4 px-6 lg:px-8"
         aria-label="Autocor"
       >
-        <a href="#" className="-m-1.5 p-1.5">
+        <Link href="/" className="-m-1.5 p-1.5">
           <span className="sr-only">Autocor</span>
           <Logo />
-        </a>
+        </Link>
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -41,7 +41,11 @@ export default function Example() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm leading-6 text-gray-900 hover:text-main hover:underline"
+              className={
+                selected === item.slug
+                  ? "text-sm leading-6 text-main hover:text-gray-900 underline"
+                  : "text-sm leading-6 text-gray-900 hover:text-main hover:underline"
+              }
             >
               {item.name}
             </Link>

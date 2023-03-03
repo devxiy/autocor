@@ -4,15 +4,24 @@ import List from "../components/List";
 import Stats from "../components/Stats";
 import CTA from "../components/CTA";
 import ContactForm from "../components/ContactForm";
+import SearchBar from "../components/SearchBar";
+import FiltersSection from "../components/FiltersSection";
 
 export default function Home() {
   return (
-    <Layout>
+    <Layout selected="home">
       <div className="bg-gray-50 flex justify-center flex-col items-center py-10">
+        <div className="px-6 w-full max-w-7xl py-6 mx-auto">
+          <SearchBar />
+        </div>
+
         <SectionText
           title="Especificaciones"
           subtitle="¿En cuál tipo de auto estás interesado?"
         />
+
+        <FiltersSection />
+
         <Button title="Buscar mi auto" />
       </div>
 
