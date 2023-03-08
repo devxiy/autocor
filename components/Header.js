@@ -6,11 +6,11 @@ import Link from "next/link";
 
 const navigation = [
   { name: "Inicio", href: "/", slug: "home" },
-  { name: "Quiénes somos", href: "#", slug: "about" },
+  { name: "Quiénes somos", href: "/quienes-somos", slug: "about" },
   { name: "Vehículos", href: "/vehiculos", slug: "vehicles" },
   { name: "Compramos tu auto", href: "#", slug: "buy" },
   { name: "Planes de financiamiento", href: "#", slug: "financing" },
-  { name: "Contáctanos", href: "#", slug: "contact" },
+  { name: "Contáctanos", href: "/contactanos", slug: "contact" },
 ];
 
 export default function Header({ selected }) {
