@@ -4,13 +4,22 @@ import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
+// const navigation = [
+//   { name: "Inicio", href: "/", slug: "home" },
+//   { name: "Quiénes somos", href: "/quienes-somos", slug: "about" },
+//   { name: "Vehículos", href: "/vehiculos", slug: "vehicles" },
+//   { name: "Compramos tu auto", href: "#", slug: "buy" },
+//   { name: "Planes de financiamiento", href: "#", slug: "financing" },
+//   { name: "Contáctanos", href: "/contactanos", slug: "contact" },
+// ];
+
 const navigation = [
   { name: "Inicio", href: "/", slug: "home" },
-  { name: "Quiénes somos", href: "/quienes-somos", slug: "about" },
+  { name: "Quiénes somos", href: "/", slug: "about" },
   { name: "Vehículos", href: "/vehiculos", slug: "vehicles" },
   { name: "Compramos tu auto", href: "#", slug: "buy" },
   { name: "Planes de financiamiento", href: "#", slug: "financing" },
-  { name: "Contáctanos", href: "/contactanos", slug: "contact" },
+  { name: "Contáctanos", href: "/", slug: "contact" },
 ];
 
 export default function Header({ selected }) {
