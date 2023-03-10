@@ -67,7 +67,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="bg-white pb-10 flex-col justify-center items-center px-8">
+      <div className="bg-white pb-4 flex-col justify-center items-center px-8">
         <Stats />
       </div>
 
@@ -84,16 +84,25 @@ export default function About() {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-4 md:gap-1 items-center">
-          <div className="w-18 flex flex-col justify-center items-center">
-            <Image src="/integrity.png" alt="" width={146} height={146} />
+        <div className="flex flex-col md:flex-row gap-4 md:gap-1 items-center mx-auto py-8">
+          <div className="flex flex-col justify-center items-center">
+            <div className="w-28 p-2 bg-white shadow-lg mb-2">
+              <Image src="/integrity.jpg" alt="" width={146} height={146} />
+            </div>
             <p className="text-gray-800 text-sm font-bold">Integridad</p>
           </div>
           <div className="hidden md:flex">
             <Image src="/link.png" alt="" width={100} height={25} />
           </div>
-          <div className="w-18 flex flex-col justify-center items-center">
-            <Image src="/responsability.png" alt="" width={146} height={146} />
+          <div className="flex flex-col justify-center items-center">
+            <div className="w-28 p-2 bg-white shadow-lg mb-2">
+              <Image
+                src="/responsability.jpg"
+                alt=""
+                width={146}
+                height={146}
+              />
+            </div>
             <p className="text-gray-800 text-sm font-bold">
               Responsabilidad y respeto
             </p>
@@ -101,8 +110,10 @@ export default function About() {
           <div className="hidden md:flex">
             <Image src="/link-2.png" alt="" width={100} height={25} />
           </div>
-          <div className="w-18 flex flex-col justify-center items-center">
-            <Image src="/honesty.png" alt="" width={146} height={146} />
+          <div className="flex flex-col justify-center items-center">
+            <div className="w-28 p-2 bg-white shadow-lg mb-2">
+              <Image src="/honesty.jpg" alt="" width={146} height={146} />
+            </div>
             <p className="text-gray-800 text-sm font-bold">
               Honestidad y compromiso
             </p>
@@ -110,8 +121,10 @@ export default function About() {
           <div className="hidden md:flex">
             <Image src="/link.png" alt="" width={100} height={25} />
           </div>
-          <div className="w-18 flex flex-col justify-center items-center">
-            <Image src="/service.png" alt="" width={146} height={146} />
+          <div className="flex flex-col justify-center items-center">
+            <div className="w-28 p-2 bg-white shadow-lg mb-2">
+              <Image src="/service.jpg" alt="" width={146} height={146} />
+            </div>
             <p className="text-gray-800 text-sm font-bold">
               Orientación al servicio
             </p>
