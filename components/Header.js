@@ -9,7 +9,11 @@ import Link from "next/link";
 //   { name: "Quiénes somos", href: "/quienes-somos", slug: "about" },
 //   { name: "Vehículos", href: "/vehiculos", slug: "vehicles" },
 //   { name: "Compramos tu auto", href: "/compramos-tu-auto", slug: "buy" },
-//   { name: "Planes de financiamiento", href: "/planes-de-financiamiento", slug: "financing" },
+//   {
+//     name: "Planes de financiamiento",
+//     href: "/planes-de-financiamiento",
+//     slug: "financing",
+//   },
 //   { name: "Contáctanos", href: "/contactanos", slug: "contact" },
 // ];
 
@@ -18,7 +22,11 @@ const navigation = [
   { name: "Quiénes somos", href: "/quienes-somos", slug: "about" },
   { name: "Vehículos", href: "/vehiculos", slug: "vehicles" },
   { name: "Compramos tu auto", href: "/", slug: "buy" },
-  { name: "Planes de financiamiento", href: "/", slug: "financing" },
+  {
+    name: "Planes de financiamiento",
+    href: "/",
+    slug: "financing",
+  },
   { name: "Contáctanos", href: "/contactanos", slug: "contact" },
 ];
 
